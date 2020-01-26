@@ -109,12 +109,14 @@ namespace AF
             //Create needed graphs
             var graph = PXGraph.CreateInstance<AFSetupMaint>();
 
+            AFSetup setup = graph.AFSetupView.Current ?? graph.AFSetupView.Select();
+
             //-----------------------------------------------------------------------------
             //Change for Setup daya
-            string bucketName = graph.AFSetupView.Current.AFBucketName; //"acumatica-forecast";
-            string s3DirectoryName = graph.AFSetupView.Current.AFDirectoryName; //"dynamics/facturas";
-            string accessKey = graph.AFSetupView.Current.AFAccessKey;
-            string secretKey = graph.AFSetupView.Current.AFSecretKey;
+            string bucketName = setup.AFBucketName; //"acumatica-forecast";
+            string s3DirectoryName = setup.AFDirectoryName; //"dynamics/facturas";
+            string accessKey = setup.AFAccessKey;
+            string secretKey = setup.AFSecretKey;
             //-----------------------------------------------------------------------------
 
             PXTrace.WriteInformation($"AFAccessKey: {accessKey} AFSecretKey: {secretKey} AFBucketName: {bucketName} AFDirectoryName: {s3DirectoryName}");
