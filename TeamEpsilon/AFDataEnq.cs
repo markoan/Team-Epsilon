@@ -172,7 +172,7 @@ namespace AF
                         item.ResultE50 = Convert.ToDecimal(line[3]);
                         item.ResultP90 = Convert.ToDecimal(line[4]);
 
-                        graph.AFResultView.Insert(item)
+                        graph.AFResultView.Insert(item);
                     }
                     graph.Save.Press();
 
@@ -267,9 +267,6 @@ namespace AF
 
         public static IEnumerable<string> ResultToString(GIDesign genericInq, Dictionary<string, DateTime?> parameters)
         {
-            //Define la fila que se generará y la variable de autoincremento
-            //DataRow row;
-            int i = 0;
 
             //Crea la instancia al graph de las consultas genericas
             PXGenericInqGrph graphGetRows = PXGenericInqGrph.CreateInstance(genericInq.DesignID.Value);
