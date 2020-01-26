@@ -140,21 +140,8 @@
                         <GIResult LineNbr="3" SortOrder="2" IsActive="1" Field="resultID" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="1" RowID="e1f27840-1fcd-44ed-8285-ca83e4cd4319" />
                         <GIResult LineNbr="2" SortOrder="1" IsActive="1" Field="forecast" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="1" RowID="40adb5c7-5960-4de3-94ec-c3f4c4897ca1" />
                     </GITable>
-                    <SiteMap linkname="toDesignById">
-                        <row Title="AWS Forecast Split" Url="~/GenericInquiry/GenericInquiry.aspx?id=c105572b-6bc2-43be-9386-27fef4aff8ac" ScreenID="GI000101" NodeID="f48067bd-9364-4dd3-84c5-4167a8ab0db5" ParentID="00000000-0000-0000-0000-000000000000">
-                            <MUIScreen IsPortal="0" WorkspaceID="bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb" Order="2414" SubcategoryID="98e86774-69e3-41ea-b94f-eb2c7a8426d4" />
-                        </row>
-                    </SiteMap>
                 </row>
             </GIDesign>
-            <MUIWorkspace>
-                <row IsPortal="1" WorkspaceID="bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb" Order="5" Title="Data Views" Icon="poll" IsSystem="1" />
-                <row IsPortal="0" WorkspaceID="bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb" Order="32" Title="Data Views" Icon="poll" IsSystem="1" />
-            </MUIWorkspace>
-            <MUISubcategory>
-                <row IsPortal="1" SubcategoryID="98e86774-69e3-41ea-b94f-eb2c7a8426d4" Order="896" Name="Inquiries" Icon="" IsSystem="1" />
-                <row IsPortal="0" SubcategoryID="98e86774-69e3-41ea-b94f-eb2c7a8426d4" Order="896" Name="Inquiries" Icon="" IsSystem="1" />
-            </MUISubcategory>
         </data>
     </data-set>
 </GenericInquiryScreen>
