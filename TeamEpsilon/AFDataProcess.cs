@@ -64,7 +64,7 @@ namespace AF
     {
         //Declare the data views and implement the event handlers here     
 
-        //public PXSetup<AFSetup> Setup;
+        public PXSetup<AFSetup> Setup;
 
         //Se declaran los DataView referentes al filtro de ptocesamiento
         public PXFilter<AFDataFilter> Filter;
@@ -103,19 +103,21 @@ namespace AF
         public static void SendData(List<SOOrder> data)
         {
 
-            //-----------------------------------------------------------------------------
-            //Change for Setup daya
-            string bucketName = "acumatica-forecast";
-            string s3DirectoryName = "dynamics/facturas";
-            string accessKey = "AKIAV3QML6GX2UL5NIHD";
-            string secretKey = "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";
-            //-----------------------------------------------------------------------------
-
             //Delaración inicial del archivo
             string name = "orders.csv";
 
             //Create needed graphs
-            //var graph = PXGraph.CreateInstance<PX.Objects.AR.ARInvoiceEntry>();
+            var graph = PXGraph.CreateInstance<AFSetupMaint>();
+
+            //-----------------------------------------------------------------------------
+            //Change for Setup daya
+            string bucketName = graph.AFSetupView.Current.AFBucketName; //"acumatica-forecast";
+            string s3DirectoryName = graph.AFSetupView.Current.AFDirectoryName; //"dynamics/facturas";
+            string accessKey = graph.AFSetupView.Current.AFAccessKey;
+            string secretKey = graph.AFSetupView.Current.AFSecretKey;
+            //-----------------------------------------------------------------------------
+
+            PXTrace.WriteInformation($"AFAccessKey: {accessKey} AFSecretKey: {secretKey} AFBucketName: {bucketName} AFDirectoryName: {s3DirectoryName}");
 
             if (data.Count == 0) return;
 
