@@ -64,6 +64,7 @@
     <Compile Include="AFDataProcess.cs" />
     <Compile Include="AFResultMaint.cs" />
     <Compile Include="AFSetupMaint.cs" />
+    <Compile Include="DAC\AFResultSplit.cs" />
     <Compile Include="DAC\AFResult.cs" />
     <Compile Include="DAC\AFSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,0 +1,17 @@
+﻿<Sql TableName="CreateAFResultSplit" SqlScriptPriority="10" CustomScript="#CDATA">
+    <CDATA name="CustomScript"><![CDATA[
+IF OBJECT_ID('dbo.AFResultSplit', 'V') IS NOT NULL
+    DROP VIEW [dbo].[AFResultSplit]
+GO
+
+CREATE VIEW [dbo].[AFResultSplit]
+	AS
+	SELECT        P10.ResultID, P10.ResultTstamp, P10.CompanyID, P10.ResultP10 AS Forecast, 'low' AS ValueType
+	FROM            dbo.AFResult AS P10
+	UNION
+	SELECT        E50.ResultID, E50.ResultTstamp, E50.CompanyID, E50.ResultP10 AS Forecast, 'mid' AS ValueType
+	FROM            dbo.AFResult AS E50
+	UNION
+	SELECT        P90.ResultID, P90.ResultTstamp, P90.CompanyID, P90.ResultP10 AS Forecast, 'high' AS ValueType
+	FROM            dbo.AFResult AS P90]]></CDATA>
+</Sql>
