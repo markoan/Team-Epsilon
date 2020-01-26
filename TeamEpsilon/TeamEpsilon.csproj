@@ -55,11 +55,16 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AFAmazonTools.cs" />
+    <Compile Include="AFDataEnq.cs" />
     <Compile Include="AFDataProcess.cs" />
+    <Compile Include="AFResultMaint.cs" />
     <Compile Include="AFSetupMaint.cs" />
+    <Compile Include="DAC\AFResult.cs" />
     <Compile Include="DAC\AFSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

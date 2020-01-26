@@ -30,8 +30,14 @@ namespace AF
 
         public abstract class aFDirectoryName : PX.Data.IBqlField { }
         [PXDBString(100, IsUnicode = true)]
-        [PXUIField(DisplayName = "Amazon Forecast Directory Name")]
+        [PXUIField(DisplayName = "Input Directory Name")]
         public virtual string AFDirectoryName { get; set; }
+
+        public abstract class aFOutDirectoryName : PX.Data.IBqlField { }
+        [PXDBString(100, IsUnicode = true)]
+        [PXUIField(DisplayName = "Output Directory Name")]
+        public virtual string AFOutDirectoryName { get; set; }
+
 
         #region tstamp
 

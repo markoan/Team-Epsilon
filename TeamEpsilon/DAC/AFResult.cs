@@ -3,10 +3,46 @@ using PX.Data;
 
 namespace AF
 {
-  [Serializable]
-  [PXCacheName("AFResult")]
-  public class AFResult : IBqlTable
-  {
+[Serializable]
+[PXCacheName("AFResult")]
+public class AFResult : IBqlTable
+{
+
+    #region ResultID
+    [PXDBString(50, IsKey = true, InputMask = "")]
+    [PXUIField(DisplayName = "Result ID")]
+    public virtual string ResultID { get; set; }
+    public abstract class resultID : PX.Data.BQL.BqlString.Field<resultID> { }
+    #endregion
+
+    #region ResultTstamp
+    [PXDBDateAndTime(IsKey = true, PreserveTime = true)]
+    [PXUIField(DisplayName = "Result Tstamp")]
+    public virtual DateTime? ResultTstamp { get; set; }
+    public abstract class resultTstamp : PX.Data.BQL.BqlByteArray.Field<resultTstamp> { }
+    #endregion
+
+    #region ResultP10
+    [PXDBDecimal()]
+    [PXUIField(DisplayName = "Result P10")]
+    public virtual decimal? ResultP10 { get; set; }
+    public abstract class resultP10 : PX.Data.BQL.BqlDecimal.Field<resultP10> { }
+    #endregion
+
+    #region ResultE50
+    [PXDBDecimal()]
+    [PXUIField(DisplayName = "Result E50")]
+    public virtual decimal? ResultE50 { get; set; }
+    public abstract class resultE50 : PX.Data.BQL.BqlDecimal.Field<resultE50> { }
+    #endregion
+
+    #region ResultP90
+    [PXDBDecimal()]
+    [PXUIField(DisplayName = "Result P90")]
+    public virtual decimal? ResultP90 { get; set; }
+    public abstract class resultP90 : PX.Data.BQL.BqlDecimal.Field<resultP90> { }
+    #endregion
+
     #region CreatedByID
     [PXDBCreatedByID()]
     public virtual Guid? CreatedByID { get; set; }
@@ -43,39 +79,5 @@ namespace AF
     public abstract class lastModifiedDateTime : PX.Data.BQL.BqlDateTime.Field<lastModifiedDateTime> { }
     #endregion
 
-    #region ResultID
-    [PXDBString(50, IsKey = true, InputMask = "")]
-    [PXUIField(DisplayName = "Result ID")]
-    public virtual string ResultID { get; set; }
-    public abstract class resultID : PX.Data.BQL.BqlString.Field<resultID> { }
-    #endregion
-
-    #region ResultTstamp
-    [PXDBTimestamp(IsKey = true)]
-    [PXUIField(DisplayName = "Result Tstamp")]
-    public virtual byte[] ResultTstamp { get; set; }
-    public abstract class resultTstamp : PX.Data.BQL.BqlByteArray.Field<resultTstamp> { }
-    #endregion
-
-    #region ResultE50
-    [PXDBDecimal()]
-    [PXUIField(DisplayName = "Result E50")]
-    public virtual Decimal? ResultE50 { get; set; }
-    public abstract class resultE50 : PX.Data.BQL.BqlDecimal.Field<resultE50> { }
-    #endregion
-
-    #region ResultP10
-    [PXDBDecimal()]
-    [PXUIField(DisplayName = "Result P10")]
-    public virtual Decimal? ResultP10 { get; set; }
-    public abstract class resultP10 : PX.Data.BQL.BqlDecimal.Field<resultP10> { }
-    #endregion
-
-    #region ResultP90
-    [PXDBDecimal()]
-    [PXUIField(DisplayName = "Result P90")]
-    public virtual Decimal? ResultP90 { get; set; }
-    public abstract class resultP90 : PX.Data.BQL.BqlDecimal.Field<resultP90> { }
-    #endregion
-  }
+    }
 }

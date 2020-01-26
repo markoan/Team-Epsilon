@@ -16,9 +16,11 @@
     <Template>
       <px:PXLayoutRule ControlSize="XL" LabelsWidth="XL" ID="PXLayoutRule1" runat="server" StartRow="True"></px:PXLayoutRule>
       <px:PXTextEdit runat="server" ID="CstPXTextEdit1" DataField="AFAccessKey" />
-      <px:PXTextEdit runat="server" ID="CstPXTextEdit2" DataField="AFBucketName" />
-      <px:PXTextEdit runat="server" ID="CstPXTextEdit3" DataField="AFDirectoryName" />
-      <px:PXTextEdit runat="server" ID="CstPXTextEdit4" DataField="AFSecretKey" /></Template>
+      <px:PXTextEdit runat="server" ID="CstPXTextEdit2" DataField="AFSecretKey" />
+      <px:PXTextEdit runat="server" ID="CstPXTextEdit3" DataField="AFBucketName" />
+      <px:PXTextEdit runat="server" ID="CstPXTextEdit4" DataField="AFDirectoryName" />
+      <px:PXTextEdit runat="server" ID="CstPXTextEdit5" DataField="AFOutDirectoryName" />
+    </Template>
     <AutoSize Container="Window" Enabled="True" MinHeight="200" ></AutoSize>
   </px:PXFormView>
 </asp:Content>
