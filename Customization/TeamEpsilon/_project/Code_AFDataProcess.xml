@@ -1,0 +1,32 @@
+﻿<Graph ClassName="AFDataProcess" Source="#CDATA" IsNew="True" FileType="NewGraph">
+    <CDATA name="Source"><![CDATA[using System;
+using PX.Data;
+
+namespace AF
+{
+	public class AFDataProcess : PXGraph<AFDataProcess>
+	{
+
+		public PXSave<MasterTable> Save;
+		public PXCancel<MasterTable> Cancel;
+
+
+		public PXFilter<MasterTable> MasterView;
+		public PXFilter<DetailsTable> DetailsView;
+
+		[Serializable]
+		public class MasterTable : IBqlTable
+		{
+
+		}
+
+		[Serializable]
+		public class DetailsTable : IBqlTable
+		{
+
+		}
+
+
+	}
+}]]></CDATA>
+</Graph>
