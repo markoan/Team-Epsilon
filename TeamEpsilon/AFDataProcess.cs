@@ -119,7 +119,7 @@ namespace AF
 
             PXTrace.WriteInformation($"AFAccessKey: {accessKey} AFSecretKey: {secretKey} AFBucketName: {bucketName} AFDirectoryName: {s3DirectoryName}");
 
-            if (data.Count == 0) return;
+            //if (data?.Count == 0) return;
 
             using (var stream = new MemoryStream())
             {
@@ -128,24 +128,27 @@ namespace AF
                     try
                     {
                         //Convert to csv and upload
-                        for (int i = 0; i < data.Count; i++)
-                        {
-                            try
-                            {
-                                var row = data[i];
-                                //Check current item
-                                PXProcessing.SetCurrentItem(row);
+                        //for (int i = 0; i < data.Count; i++)
+                        //{
+                        //    try
+                        //    {
+                        //        var row = data[i];
+                        //        //Check current item
+                        //        PXProcessing.SetCurrentItem(row);
 
-                                var line = $"{row.OrderNbr},{row.OrderDate:yyyy-MM-ddTHH:mm:ss},{row.OrderQty}";
+                        //        var line = $"{row.OrderNbr},{row.OrderDate:yyyy-MM-ddTHH:mm:ss},{row.OrderQty}";
 
-                                sw.WriteLine(line);
-                            }
-                            catch (Exception e)
-                            {
-                                PXProcessing<SOOrder>.SetError(i, e.Message);
-                            }
+                        //        sw.WriteLine(line);
+                        //    }
+                        //    catch (Exception e)
+                        //    {
+                        //        PXProcessing<SOOrder>.SetError(i, e.Message);
+                        //    }
 
-                        }
+                        //}
+
+                        var line = $"TEST,2020-01-25T00:10:10,1.00";
+                        sw.WriteLine(line);
 
                         //Si existe el CFDI permite la subida del XML y PDF
                         //Se crea la instancia a S3 

@@ -32,25 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.Core.3.3.104.21\lib\net45\AWSSDK.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="AWSSDK.ForecastQueryService, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.ForecastQueryService.3.3.100.63\lib\net45\AWSSDK.ForecastQueryService.dll</HintPath>
-    </Reference>
-    <Reference Include="AWSSDK.ForecastService, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.ForecastService.3.3.101.25\lib\net45\AWSSDK.ForecastService.dll</HintPath>
-    </Reference>
-    <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
-      <HintPath>..\packages\AWSSDK.S3.3.3.110.19\lib\net45\AWSSDK.S3.dll</HintPath>
+    <Reference Include="AWSSDK, Version=2.3.33.0, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.2.3.33.0\lib\net45\AWSSDK.dll</HintPath>
     </Reference>
     <Reference Include="PX.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b136cac2f602b8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Bin\PX.Common.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="PX.CS.Contracts">
-      <HintPath>..\..\..\..\Bin\PX.CS.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="PX.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3b136cac2f602b8e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -74,17 +62,11 @@
     <Compile Include="DAC\AFSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\AWSSDK.ForecastQueryService.3.3.100.63\analyzers\dotnet\cs\AWSSDK.ForecastQueryService.CodeAnalysis.dll" />
-    <Analyzer Include="..\packages\AWSSDK.ForecastService.3.3.101.25\analyzers\dotnet\cs\AWSSDK.ForecastService.CodeAnalysis.dll" />
-    <Analyzer Include="..\packages\AWSSDK.S3.3.3.110.19\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
