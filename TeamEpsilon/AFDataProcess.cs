@@ -97,7 +97,7 @@ namespace AF
                 query.WhereAnd<Where<SOOrder.orderDate, LessEqual<Current<AFDataFilter.endDate>>>>();
             }
 
-            return query.Select(this);
+            return query.Select();
         }
 
         public static void SendData(List<SOOrder> data)
