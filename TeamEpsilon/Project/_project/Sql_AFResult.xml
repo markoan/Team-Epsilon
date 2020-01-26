@@ -6,14 +6,15 @@
   <col name="ResultE50" type="Decimal(19,4)" nullable="true" />
   <col name="ResultP90" type="Decimal(19,4)" nullable="true" />
   <col name="CompanyID" type="Int" default="Zero" />
-  <col name="CreatedByID" type="UniqueIdentifier" />
-  <col name="CreatedByScreenID" type="Char(8)" />
-  <col name="CreatedDateTime" type="DateTime" />
-  <col name="LastModifiedByID" type="UniqueIdentifier" />
-  <col name="LastModifiedByScreenID" type="Char(8)" />
-  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="CreatedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByScreenID" type="Char(8)" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" nullable="true" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="LastModifiedByScreenID" type="Char(8)" nullable="true" />
+  <col name="LastModifiedDateTime" type="DateTime" nullable="true" />
   <col name="tstamp" type="Timestamp" />
-  <index name="PK__AFResult__F88BEDF130AC5AA9" clustered="true" primary="true" unique="true">
+  <index name="PK_AFResult" clustered="true" primary="true" unique="true">
+    <col name="ResultID" />
     <col name="ResultTstamp" />
   </index>
 </table>]]></CDATA>

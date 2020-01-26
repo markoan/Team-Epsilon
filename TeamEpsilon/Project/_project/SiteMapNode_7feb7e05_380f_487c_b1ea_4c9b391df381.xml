@@ -25,8 +25,21 @@
         </layout>
         <data>
             <SiteMap>
-                <row Position="5958" Title="Amazon Forecast Data" Url="~/Pages/AF/AF501000.aspx" ScreenID="AF501000" NodeID="4f83ab92-2db3-4b75-8363-7bbb74ff5dec" ParentID="00000000-0000-0000-0000-000000000000" />
+                <row Title="Amazon Forecast Data" Url="~/Pages/AF/AF501000.aspx" ScreenID="AF501000" NodeID="7feb7e05-380f-487c-b1ea-4c9b391df381" ParentID="00000000-0000-0000-0000-000000000000">
+                    <MUIScreen IsPortal="0" WorkspaceID="d5cbc4c3-5f8b-40da-80c9-49897f1f74b8" Order="260" SubcategoryID="0b491e12-c58d-4e47-8a0d-96dd3a8ab395" />
+                </row>
             </SiteMap>
+            <MUIWorkspace>
+                <row IsPortal="0" WorkspaceID="d5cbc4c3-5f8b-40da-80c9-49897f1f74b8" Order="147" Title="Receivables" Icon="add_circle" AreaID="338edf81-5456-4735-8601-b213458e93fe" ScreenID="WSAR0000" IsSystem="0">
+                    <MUIFavoriteWorkspace IsPortal="0" Username="" IsFavorite="1" />
+                </row>
+            </MUIWorkspace>
+            <MUISubcategory>
+                <row IsPortal="0" SubcategoryID="0b491e12-c58d-4e47-8a0d-96dd3a8ab395" Order="1024" Name="Reports" Icon="" IsSystem="0" />
+            </MUISubcategory>
+            <MUIArea>
+                <row IsPortal="0" AreaID="338edf81-5456-4735-8601-b213458e93fe" Order="10" Name="Financials" />
+            </MUIArea>
         </data>
     </data-set>
 </SiteMapNode>

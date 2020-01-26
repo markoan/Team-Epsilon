@@ -9,6 +9,7 @@ using Amazon.S3;
 using Amazon.S3.Transfer;
 using Amazon.S3.Model;
 using System.IO;
+using PX.Data;
 
 namespace AF
 {
@@ -63,7 +64,7 @@ namespace AF
 
             request.BucketName = bucketName;
             request.Prefix = subDirectoryInBucket;
-            request.Delimiter = "/";
+            //request.Delimiter = "/";
             request.MaxKeys = 1000;
 
             ListObjectsResponse response = client.ListObjects(request);
@@ -83,7 +84,13 @@ namespace AF
 
                     while ((currentLine = reader.ReadLine()) != null)
                     {
-                        yield return currentLine.Split(separator, StringSplitOptions.None);
+                        if (!currentLine.Contains("date,p10,p50,p90"))
+                        {
+                            //PXTrace.WriteInformation($"line content:{currentLine}");
+                            var parts = currentLine.Split(separator, StringSplitOptions.None);
+                            // Only return complete lineas with all 5 fields
+                            if (parts.Count() > 4)  yield return parts;
+                        }
                     }
                 }
 

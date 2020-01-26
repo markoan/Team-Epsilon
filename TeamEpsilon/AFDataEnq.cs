@@ -77,7 +77,7 @@ namespace AF
         public PXFilter<AFDataFilter> Filter;
         public PXCancel<AFDataFilter> Cancel;
 
-        public PXSelect<AFResult> Result;
+        public PXSelectReadonly<AFResult> Result;
 
         // GI 
         public PXSelect<GIResult, Where<GIResult.designID, Equal<Current<AFDataFilter.genericInq>>>> ResultGI;
@@ -87,7 +87,9 @@ namespace AF
 
         public AFDataEnq()
         {
-
+            Result.AllowDelete = false;
+            Result.AllowInsert = false;
+            Result.AllowUpdate = false;
         }
 
         #endregion DataViews
@@ -165,21 +167,28 @@ namespace AF
 
                     foreach(var line in result)
                     {
-                        var item = new AFResult();
-                        item.ResultID = line[0];
-                        item.ResultTstamp = DateTime.Parse(line[1], null, System.Globalization.DateTimeStyles.RoundtripKind);
-                        item.ResultP10 = Convert.ToDecimal(line[2]);
-                        item.ResultE50 = Convert.ToDecimal(line[3]);
-                        item.ResultP90 = Convert.ToDecimal(line[4]);
+                        try
+                        {
+                            var item = new AFResult();
+                            item.ResultID = line[0];
+                            item.ResultTstamp = DateTime.Parse(line[1], null, System.Globalization.DateTimeStyles.RoundtripKind);
+                            item.ResultP10 = Convert.ToDecimal(line[2]);
+                            item.ResultE50 = Convert.ToDecimal(line[3]);
+                            item.ResultP90 = Convert.ToDecimal(line[4]);
 
-                        graph.AFResultView.Insert(item);
+                            graph.AFResultView.Update(item);
+                        }
+                        catch (Exception e)
+                        {
+                            PXTrace.WriteError($"Error parsing data ({String.Join(",", line)}): {e.Message}");
+                        }
                     }
                     graph.Save.Press();
 
                 }
                 catch (Exception e)
                 {
-                    PXProcessing<SOOrder>.SetError(e.Message);
+                    throw new PXException(e.Message, e);
                 }
 
 
